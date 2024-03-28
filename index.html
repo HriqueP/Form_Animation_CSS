@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form - Slide Animation</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="website icon" type="png" href="./assets/WI.png" />
+  </head>
+  <body>
+    <main class="container">
+      <div class="forms">
+        <form class="panel form-login" id="form-login" action="#" method="post">
+          <h2>Welcome Back!</h2>
+          <img
+            src="./assets/Form_Cover_1.png"
+            alt="Login Image"
+            width="300px"
+            height="auto"
+          />
+          <input
+            class="input-field"
+            type="email"
+            name="email-login"
+            id="email-login"
+            placeholder="E-mail"
+            autofocus
+          />
+          <input
+            class="input-field"
+            type="password"
+            name="pass-login"
+            id="pass-login"
+            placeholder="Password"
+            maxlength="25"
+          />
+          <input
+            class="btn btn-login"
+            type="submit"
+            name="btn-login"
+            id="btn-login"
+            value="Login"
+          />
+        </form>
+        <form
+          class="panel form-signin"
+          id="form-signin"
+          action="#"
+          method="post"
+        >
+          <h2>Lets Get Together!</h2>
+          <img
+            src="./assets/Form_Cover_2.png"
+            alt="Login Image"
+            width="200px"
+            height="auto"
+          />
+          <input
+            class="input-field"
+            type="email"
+            name="email-signin"
+            id="email-signin"
+            placeholder="E-mail"
+            autofocus
+          />
+          <input
+            class="input-field"
+            type="email"
+            name="email-signin-confirm"
+            id="email-signin-confirm"
+            placeholder="E-mail Confirmation"
+            autofocus
+          />
+          <input
+            class="input-field"
+            type="password"
+            name="pass-signin"
+            id="pass-signin"
+            placeholder="Password"
+            maxlength="25"
+          />
+          <input
+            class="btn btn-sigin"
+            type="submit"
+            name="btn-signin"
+            id="btn-signin"
+            value="Sign In"
+          />
+        </form>
+      </div>
+
+      <div class="choices on-right">
+        <button class="btn-choices">Don't have an account ?</button>
+      </div>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>
