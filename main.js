@@ -1,12 +1,14 @@
-// Block to slide the panel and chance forms
+// Slide panel and button
 const panelChoices = document.querySelector(".choices");
 const btnChoices = document.querySelector(".btn-choices");
 
+// Panels
 const panelLogin = document.querySelector(".form-login");
 const panelSignIn = document.querySelector(".form-signin");
 
 btnChoices.addEventListener("click", slidePanel);
 
+// Execute the slide panel animation
 function slidePanel() {
   if (panelChoices.classList.contains("on-right")) {
     panelChoices.classList.remove("on-right");
@@ -25,26 +27,31 @@ function slidePanel() {
   }
 }
 
-// Block to execute Login and Sign In events
+// Login and Sign-in forms
 const formLogin = document.getElementById("form-login");
 const formSignIn = document.getElementById("form-signin");
 
+// Function for Login
 formLogin.onsubmit = async (e) => {
   e.preventDefault();
+
   // Input fields from Login form
   const emailLogin = document.getElementById("email-login").value;
   const passLogin = document.getElementById("pass-login").value;
   alert(`Value E-mail: ${emailLogin} - Value Pass: ${passLogin}`);
 };
 
+// Function for Sign-In
 formSignIn.onsubmit = async (e) => {
   e.preventDefault();
+
+  // Input fields from Sign-In form
   const emailSignIn = document.getElementById("email-signin").value;
-  const emaiConfirmlSignIn = document.getElementById(
+  const emailSignInConfirm = document.getElementById(
     "email-signin-confirm"
   ).value;
   const passSignIn = document.getElementById("pass-signin").value;
   alert(
-    `Value E-mail: ${emailSignIn} - Value E-mail Confirm: ${emaiConfirmlSignIn} - Value Pass: ${passSignIn}`
+    `Value E-mail: ${emailSignIn} - Value E-mail Confirm: ${emailSignInConfirm} - Value Pass: ${passSignIn}`
   );
 };
