@@ -6,8 +6,11 @@ const btnChoices = document.querySelector(".btn-choices");
 const panelLogin = document.querySelector(".form-login");
 const panelSignIn = document.querySelector(".form-signin");
 
-btnChoices.addEventListener("click", slidePanel);
+// Login and Sign-in forms
+const formLogin = document.getElementById("form-login");
+const formSignIn = document.getElementById("form-signin");
 
+btnChoices.addEventListener("click", slidePanel);
 // Execute the slide panel animation
 function slidePanel() {
   if (panelChoices.classList.contains("on-right")) {
@@ -27,10 +30,6 @@ function slidePanel() {
   }
 }
 
-// Login and Sign-in forms
-const formLogin = document.getElementById("form-login");
-const formSignIn = document.getElementById("form-signin");
-
 // Function for Login
 formLogin.onsubmit = async (e) => {
   e.preventDefault();
@@ -38,7 +37,26 @@ formLogin.onsubmit = async (e) => {
   // Input fields from Login form
   const emailLogin = document.getElementById("email-login").value;
   const passLogin = document.getElementById("pass-login").value;
-  alert(`Value E-mail: ${emailLogin} - Value Pass: ${passLogin}`);
+  let email = sessionStorage.getItem("email");
+  let pass = sessionStorage.getItem("pass");
+  let warning = "";
+
+  if (
+    sessionStorage.getItem("email") == null ||
+    sessionStorage.getItem("pass") == null
+  ) {
+    // Logic to pop-up
+    warning = `<p>You still dont have an account!</p>`;
+    showPopUp(warning);
+  } else {
+    if (email == emailLogin && pass == passLogin) {
+      window.open("https://www.linkedin.com/in/henrique-poletti-0a089a213/");
+      sessionStorage.clear();
+    } else {
+      warning = `<p>Account not found!</p>`;
+      showPopUp(warning);
+    }
+  }
 };
 
 // Function for Sign-In
@@ -51,7 +69,29 @@ formSignIn.onsubmit = async (e) => {
     "email-signin-confirm"
   ).value;
   const passSignIn = document.getElementById("pass-signin").value;
-  alert(
-    `Value E-mail: ${emailSignIn} - Value E-mail Confirm: ${emailSignInConfirm} - Value Pass: ${passSignIn}`
-  );
+  let warning = "";
+
+  if (emailSignIn != emailSignInConfirm) {
+    // Logic to pop-up
+    warning = `<p>E-mails must be equal!</p>`;
+    showPopUp(warning);
+    return;
+  } else {
+    // Stores the registration in the session
+    sessionStorage.setItem("email", emailSignIn);
+    sessionStorage.setItem("email-confirm", emailSignInConfirm);
+    sessionStorage.setItem("pass", passSignIn);
+
+    warning = `<p>Account registred!</p>`;
+    showPopUp(warning);
+  }
 };
+
+function showPopUp(message) {
+  const alertPopUp = document.querySelector(".custom-alert");
+  alertPopUp.innerHTML = message;
+  alertPopUp.style.top = "20px";
+  setTimeout(function () {
+    alertPopUp.style.top = "-100px";
+  }, 3000);
+}

@@ -25,6 +25,7 @@
             id="email-login"
             placeholder="E-mail"
             autofocus
+            required
           />
           <input
             class="input-field"
@@ -33,6 +34,7 @@
             id="pass-login"
             placeholder="Password"
             maxlength="25"
+            required
           />
           <input
             class="btn btn-login"
@@ -61,7 +63,7 @@
             name="email-signin"
             id="email-signin"
             placeholder="E-mail"
-            autofocus
+            required
           />
           <input
             class="input-field"
@@ -69,7 +71,7 @@
             name="email-signin-confirm"
             id="email-signin-confirm"
             placeholder="E-mail Confirmation"
-            autofocus
+            required
           />
           <input
             class="input-field"
@@ -78,6 +80,7 @@
             id="pass-signin"
             placeholder="Password"
             maxlength="25"
+            required
           />
           <input
             class="btn btn-sigin"
@@ -93,6 +96,8 @@
         <button class="btn-choices">Don't have an account ?</button>
       </div>
     </main>
+
+    <div class="custom-alert"></div>
 
     <script src="main.js"></script>
   </body>
