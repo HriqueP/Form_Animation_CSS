@@ -1,6 +1,6 @@
 ## Form w/ Animation 🖆
 
-A form that executes an animation to alter between Login and Sign-In actions.
+A form that plays an animation to alter between Login and Sign-In actions.
 
 It saves your Sign-In information on the session so you can Login as one user.
 
